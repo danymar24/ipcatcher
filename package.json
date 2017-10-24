@@ -1,0 +1,24 @@
+{
+  "name": "ipcatcher",
+  "version": "1.0.0",
+  "description": "Catches the ip address of the connected clients",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://server1.saentiglobal.com/ipcatcher.git"
+  },
+  "author": "Daniel Rdz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/server1.saentiglobal.com/ipcatcher/issues"
+  },
+  "homepage": "https://github.com/server1.saentiglobal.com/ipcatcher#readme",
+  "dependencies": {
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4"
+  }
+}
