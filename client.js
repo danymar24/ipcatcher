@@ -1,10 +1,10 @@
-var io = require('socket.io-client')('http://localhost'),
+var io = require('socket.io-client')('http://localhost:3000'),
     http = require('http'),
     os = require('os');
 
 io.on('connect', function() {
     console.log('Connected to server');
-    socket.on('getDeviceInfo', function () {
+    io.on('getDeviceInfo', function () {
         http.get('http://icanhazip.com/', function (resp) { 
             var ip = '';
     
@@ -17,7 +17,6 @@ io.on('connect', function() {
                     name: os.hostname(),
                     ip: ip
                 };
-                console.log(info);
                 io.emit('info', info); 
             });
     

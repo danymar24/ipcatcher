@@ -5,10 +5,10 @@
         <script>
             var io = io();
 
-            io.on('connect', function(socket) {
+            io.on('connect', function(ocket) {
                 
-                socket.on('deviceInfo', function(data) {
-                    var info = 'Device name: ' + device.name + ' IP: ' + data.ip;
+                io.on('deviceInfo', function(data) {
+                    var info = 'Device name: ' + data.name + ' IP: ' + data.ip;
                     console.log(data);
                     addMessage(info);
                 });

@@ -18,20 +18,19 @@ function requestDeviceInfo() {
     io.emit('getDeviceInfo', { message: 'getDeviceInfo'});
 }
 
-// Send current time every 10 secs
-setInterval(requestDeviceInfo, 10000);
 
 // Emit welcome message on connection
 io.on('connection', function (socket) {
+    // Send current time every 10 secs
+    setInterval(requestDeviceInfo, 10000);
     console.log('Client connected');
     socket.emit('welcome', {
         message: 'Welcome!',
         id: socket.id
     });
 
-    io.on('info', function(data) {
-        console.log(data);
-        socket.emit('deviceInfo', data);
+    socket.on('info', function(data) {
+        io.emit('deviceInfo', data);
     });
 });
 
